@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--
+SynthForce
+
+Copyright (c) 2015 Jonne Itkonen
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be included
+in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+-->
+
+<html lang="fi">
+  <head>
+    <title>Taulukko</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="synthforce.css">
+    <!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+    <script src="/skewer"></script> <!-- emacsin skewer-mode, ei tartte välittää kuin kehittäessä emacsilla ja skewer-modessa -->
+    <!-- script src="http://code.jquery.com/jquery-1.9.1.min.js"></script -->
+    <!-- script src="jquery-1.9.1.min.js"></script -->
+    <script src="synthforce.js"></script>
+  </head>
+  <body>
+    <div id="taajuusboksi">
+	<label>
+	  <span>Taajuudet pilkuilla eroteltuina:</span>
+	  <input type="text" name="taajuudet" size="80" id="taajuudet" value="440,220,440">
+	</label>
+	<button id="soitto" name="soita" onclick="play(document.getElementById('taajuudet').value);"> Soita </button>
+	<button id="lopetus" name="lopeta" onclick="stop();"> Lopeta </button>
+    </div>
+  </body>
+</html>
