@@ -28,8 +28,7 @@ var audioCtx;
 window.addEventListener('load', init, false);
 
 function init() {
-    audioCtx = new (window.AudioContext ? AudioContext : webkitAudioContext)()
-	audioCtx.oscs = [];
+    audioCtx = new (window.AudioContext ? AudioContext : webkitAudioContext)();
 }
 
 function playFreq(f, startTime, length) {
@@ -37,10 +36,9 @@ function playFreq(f, startTime, length) {
     o1.frequency.value = f;
 
     o1.connect(audioCtx.destination);
-    o1.context.oscs.push(o1);
     o1.onended = function () {
-	o1.disconnect();
-	o1.context.oscs.splice(o1.context.oscs.indexOf(o1),1); };
+        o1.disconnect();
+    };
     o1.start(startTime);
     o1.stop(startTime+length);
 
